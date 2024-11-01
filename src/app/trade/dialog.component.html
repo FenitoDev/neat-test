@@ -1,0 +1,45 @@
+<div>
+  <mat-dialog-content class="container">
+    <div class="header">
+      <h2>Compra y Venta de Criptomonedas</h2>
+    </div>
+    <div class="subtitle">
+      <div class="radio">
+        <mat-button-toggle-group [(ngModel)]="type" name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle class="buy" value="buy">Comprar</mat-button-toggle>
+          <mat-button-toggle class="sell" value="sell">Vender</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <div class="content">
+      <div class="select">
+        <select class="input-field" id="crypto" [(ngModel)]="crypto">
+          <option value="" disabled selected>Elige tu criptomoneda</option>
+          <option *ngFor="let currency of cryptos.CRYPTOS" [value]="currency.name">{{currency.name.toUpperCase()}}
+          </option>
+        </select>
+      </div>
+      <input class="input-field" name="amount" [(ngModel)]="amount" type="number" />
+    </div>
+    <div class="footer">
+      <div class="totals">
+        <div [ngClass]="{error: data.prices[crypto]?.usd*amount>data.balance&&type==='buy'}">
+          <strong>
+            Total:
+          </strong>
+          {{(type==="buy" ? -data.prices[crypto]?.usd*amount : data.prices[crypto]?.usd*amount ) | currency:'USD'}} USD
+        </div>
+        <div>
+          <div [ngClass]="{error: data.prices[crypto]?.usd*amount>data.balance&&type==='sell'}">
+            <strong>
+              Disponible:
+            </strong>
+            {{(type==="buy" ? data.userData?.usd||0 : (data.userData[crypto]||0)) | currency:'USD' }} {{type==="buy"?
+            "USD":data.currency }}
+          </div>
+        </div>
+      </div>
+      <button class="primary-button" (click)="onConfirm()">Confirmar</button>
+    </div>
+  </mat-dialog-content>
+</div>

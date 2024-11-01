@@ -1,0 +1,4 @@
+<app-balance currency="Valor neto" [value]="netWorth" />
+<app-balance currency="Disponible" [value]="usd" />
+<app-transaction *ngFor="let transaction of transactions" [amount]="transaction.amount" [crypto]="transaction.crypto"
+  [price]="transaction.price" [type]="transaction.type"></app-transaction>

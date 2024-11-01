@@ -1,0 +1,65 @@
+.container{
+  min-width: 400px;
+  max-height: 400px;
+}
+
+.radio{
+  margin-left: 1rem;
+}
+
+.buy{
+  color: #50A684;
+}
+.sell{
+  color: #F9423A;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.error{
+  color:#F9423A;
+}
+
+.subtitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select{
+  margin-right: 2rem;
+}
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 1rem;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+}
+.success-snackbar {
+  background-color: green; /* Cambia el color de fondo */
+  color: white; /* Cambia el color del texto */
+}
+
+.error-snackbar {
+  background-color: red; /* Cambia el color de fondo */
+  color: white; /* Cambia el color del texto */
+}

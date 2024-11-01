@@ -1,0 +1,18 @@
+
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.crypto-cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  gap: 1rem;
+  padding: 10px;
+  max-width: min-content;
+}

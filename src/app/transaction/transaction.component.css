@@ -1,0 +1,80 @@
+.transaction-container {
+  display: flex;
+  align-items: center;
+}
+
+.transaction-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  gap: 40px;
+  width: 341px;
+  height: 48px;
+  background: #FCFDFF;
+  border: 1px solid rgba(183, 211, 249, 0.5);
+  border-radius: 8px;
+  position: relative;
+  margin: 1rem;
+}
+
+.currency {
+  margin: 0 auto;
+  width: 95px;
+  height: 21px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color: #151F6D;
+}
+
+.amount {
+  margin: 0 auto;
+  width: 26px;
+  height: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #3B4086;
+}
+
+.value {
+  margin: 0 auto;
+  width: 147px;
+  height: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+}
+
+.buy .value span {
+  color: #50A684;
+}
+
+.sell .value span {
+  color: #F9423A;
+}
+
+.status {
+  position: absolute;
+  width: 90px;
+  height: 20px;
+  left: 9px;
+  top: -11px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: #9D9FC2;
+}
+
+.icon {
+  cursor: pointer;
+}

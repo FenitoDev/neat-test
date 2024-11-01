@@ -1,0 +1,13 @@
+<app-header [userData]="userData" [prices]="prices"></app-header>
+<div class="layout" *ngIf="crypto?.CRYPTOS && userData">
+  <div class="crypto-cards">
+    <app-card *ngFor="let currency of crypto.CRYPTOS" [name]="currency.name | titlecase"
+      [id]="currency.code.toUpperCase()" [value]="(prices[currency.name]?.usd | currency: 'USD') || '-'" />
+  </div>
+  <div class="balances" *ngIf="userData">
+    <app-balance *ngFor="let currency of crypto.CRYPTOS" [currency]="currency.name | titlecase"
+      [id]="currency.code.toUpperCase()" [balance]="(userData[currency.name])"
+      [value]="(prices[currency.name]?.usd*userData[currency.name])" />
+  </div>
+  <app-transaction-page [transactions]="transactions" [netWorth]="netWorth" [usd]="userData.usd" />
+</div>

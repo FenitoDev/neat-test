@@ -1,0 +1,10 @@
+<div class="transaction-card">
+  <div class="status">Transacción</div>
+  <div class="currency">{{ crypto }}</div>
+  <div class="amount">{{ amount }}</div>
+  <div class="value" [ngClass]="type"><span [style.color]="type === 'buy' ? '#50A684' : '#F9423A'">
+      {{ type === 'buy' ? '+' : '-' }}{{ price | number: "1.2-2" }}
+    </span>
+    <strong style="color: #9D9FC2;"> USD</strong>
+  </div>
+</div>

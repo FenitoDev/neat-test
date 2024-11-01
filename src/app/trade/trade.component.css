@@ -1,0 +1,20 @@
+
+.trade {
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #3369F0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trade:hover{
+  background-color: #5C87F3;
+}
+.trade-icon{
+  display: flex;
+  position: relative;
+  top:-3px;
+  width: 24px;
+  height: 24px;
+}
