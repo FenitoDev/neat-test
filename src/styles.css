@@ -136,6 +136,42 @@ h1 {
   color: #A1A5C5;
 }
 
+
+.label {
+  position: relative;
+  top: 10px;
+  left: 12px;
+  padding: 0 4px;
+  background-color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #A1A5C5;
+  z-index: 2;
+}
+
+
+.helper {
+  position: relative;
+  top: -18px;
+  width: 100%;
+  padding: 0px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #A1A5C5;
+  box-sizing: border-box;
+}
+
+.field.error .input-field {
+  border-color: #F9423A;
+}
+
+.field.error .label,
+.field.error .helper {
+  color: #F9423A;
+}
+
 .success-snackbar {
   background-color: #4caf50;
   color: #fff;
@@ -144,4 +180,10 @@ h1 {
 .error-snackbar {
   background-color: #f44336;
   color: #fff;
+}
+
+.back{
+  margin:1rem;
+  border:none;
+  cursor:pointer;
 }

@@ -32,6 +32,9 @@ export class RegisterComponent {
         console.error('Error durante el registro', error);
       });
   }
+  goHome(): void {
+    this.router.navigateByUrl('/');
+  }
 
   constructor(private auth: Auth) {}
 }
