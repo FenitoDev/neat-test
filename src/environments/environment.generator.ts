@@ -20,7 +20,7 @@ const setEnv = () => {
   firebaseMeasurementId: '${process.env['FB_MEASUREMENT_ID']}',
 };
 `;
-  console.log(
+  console.info(
     'The file `environment.ts` will be written with the following content: \n'
   );
   writeFile(targetPath, envConfigFile, (err: Error) => {
@@ -28,7 +28,7 @@ const setEnv = () => {
       console.error(err);
       throw err;
     } else {
-      console.log(
+      console.info(
         `Angular environment.ts file generated correctly at ${targetPath} \n`
       );
     }

@@ -28,7 +28,6 @@ export class CryptoTransactionService {
     amount: number,
     type: 'buy' | 'sell'
   ): Promise<{ statusCode: number; message: string }> {
-    console.log('transaction service');
     try {
       const userBalance = await this.authService.getData(userId);
       const cryptoPrices = await this.cryptoPriceService
@@ -37,14 +36,12 @@ export class CryptoTransactionService {
       if (!cryptoPrices)
         return { statusCode: 404, message: 'Cryptocurrency not found' };
       const cryptoPrice = cryptoPrices[crypto]?.usd;
-      console.log({ cryptoPrice });
 
       if (!cryptoPrice) {
         return { statusCode: 404, message: 'Cryptocurrency not found' };
       }
 
       const transactionCost = amount * cryptoPrice;
-      console.log({ transactionCost });
 
       if (type === 'buy') {
         if (userBalance['usd'] < transactionCost) {

@@ -10,18 +10,40 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Environment variables
+
+Create a .env file in the project's root folder before building the project.
+
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## The app
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Running the app
 
-## Running end-to-end tests
+Run `ng serve` to run the app once built.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Usage
 
-## Further help
+Once in the landing url (localhost:4200 for local development and https://neat-test-f0035.web.app/ for web), you'll get prompted to login or register. Once authenticated, you will be redirected to the home page, where you'll see three columns of data:
+- The prices for the main cryptocurrencies as fetched from coingecko's API.
+- The user's balance for the cryptocurrencies and their value in USD.
+- The net worth of the user in USD, their available money in USD and the list of transactions they've made.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Also, on the header bar, there will be a logout button and a button for trading. Pressing this last button will open a dialog prompting the user for buying or selling a cryptocurrency. This dialog makes a request for the mock Neat Crypto Exchange API, throwing an error on 10% of the requests.
+
+## Security
+
+The environment variable file is generated during build, so that they are not public.
+If an unauthenticated user tries to navigate to `/home` they will be kicked out and prompted to login or register.
+
+## Next steps
+
+- Being a crypto exchange service, the user should be able to `schedule` transactions with target price and stop-loss, instead of having to trade the moment they get their desired price
+- To increase security, the user should be automatically logged out after 10 minutes
+- Add multi-factor-authentication to increase users' account security
+- Add trading among cryptocurrencies (currently is just USD-crypto)
+- Add a profit module, in which the user can see how much their money has grown (or shrunk)
+- Add embedded graphics for currency pairs to see market tendencies
+- Store in the database the crypto currencies prices as fetched in the coingecko API, to avoid errors from too many requests from the API

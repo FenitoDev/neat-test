@@ -42,8 +42,6 @@ export class TradeComponent {
   constructor() {}
 
   openDialog() {
-    console.log({ prices: this.prices });
-    console.log({ userData: this.userData });
     this.dialog.open(Dialog, {
       data: {
         userData: this.userData,
@@ -101,12 +99,11 @@ export class Dialog {
 
       if (response.statusCode === 200) {
         this.successMessage = response.message;
-        console.log({ success: this.successMessage, data: this.data });
         this.showSuccess(this.successMessage);
         this.dialogRef.close();
       } else {
         this.errorMessage = response.message;
-        console.log({ error: this.errorMessage });
+        console.error({ error: this.errorMessage });
         this.showError(this.errorMessage);
       }
     } catch (error) {

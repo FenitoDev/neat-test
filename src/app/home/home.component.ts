@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
             this.transactions = transactions.map((transaction) => {
               return {
                 ...transaction,
-                date: transaction.date.toDate(),
+                date: transaction.date?.toDate(),
               };
             });
             this.transactions.sort((a, b) => b.date - a.date);
