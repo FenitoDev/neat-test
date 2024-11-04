@@ -2,17 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Environment variables
 
-Create a .env file in the project's root folder before building the project.
+Create a `.env` file under `src/environments/` before building the project.
 
 ## Build
 
@@ -20,9 +12,13 @@ Run `npm run build` to build the project. The build artifacts will be stored in 
 
 ## The app
 
-### Running the app
+### Installing dependencies
 
-Run `ng serve` to run the app once built.
+Run `npm install` in the project's root directory to install dependencies.
+
+### Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ### Usage
 
