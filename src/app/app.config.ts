@@ -23,7 +23,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirebaseApp(() => {
+      console.log({ firebaseConfig });
+      return initializeApp(firebaseConfig);
+    }),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     { provide: FIREBASE_OPTIONS, useValue: firebaseConfig },
